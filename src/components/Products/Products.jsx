@@ -1,17 +1,25 @@
 import React from "react";
 import styles from "../../styles/Products.module.css";
-import customProducts from "./customProducts"; 
+import customProducts from "./customProducts";
+import { Link } from "react-router-dom";
 
 const Products = ({ title, style = {}, amount }) => {
-  const list = customProducts.slice(0, amount); 
+  const list = customProducts.slice(0, amount);
 
   return (
     <section className={styles.products} style={style}>
       {title && <h2>{title}</h2>}
       <div className={styles.list}>
         {list.map(({ id, images, title, category, price }) => (
-          <div key={id} className={styles.product}>
-            <div className={styles.image} style={{ backgroundImage: `url(${images[0]})` }} />
+          <Link
+            key={id}
+            className={styles.product}
+            to={`/categories/${id - 1}`}
+          >
+            <div
+              className={styles.image}
+              style={{ backgroundImage: `url(${images[0]})` }}
+            />
 
             <div className={styles.wrapper}>
               <h3 className={styles.title}>{title}</h3>
@@ -19,12 +27,16 @@ const Products = ({ title, style = {}, amount }) => {
               <div className={styles.info}>
                 <div className={styles.price}>
                   <div className={styles.price}>{price}$</div>
-                  <div className={styles.oldPrice}>{Math.floor(price / 0.5)}$</div>
+                  <div className={styles.oldPrice}>
+                    {Math.floor(price / 0.5)}$
+                  </div>
                 </div>
-                <div className={styles.purchases}>{Math.floor(Math.random() * 20 + 1)} purchased</div>
+                <div className={styles.purchases}>
+                  {Math.floor(Math.random() * 20 + 1)} purchased
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
