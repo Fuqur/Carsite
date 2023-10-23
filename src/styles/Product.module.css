@@ -144,3 +144,28 @@
     text-align: center;
     padding: 10px;
   }
+  .cartret {
+    text-align: center;
+    margin-bottom: 300px;
+    margin-left: 300px;
+  }
+  .cartul {
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #413f3f;
+    padding: 10px;
+
+  }
+  .sectioncart {
+    text-align: center;
+  margin-left: 320px;
+  border: 1px solid #6b6a6a; 
+  border-radius: 6px;
+  padding: 20px; 
+  column-gap: 10px;
+  }
+  .cartul li {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    margin-bottom: 10px;
+  }

@@ -5,9 +5,19 @@ import { ROUTES } from "../../utils/routes";
 import LOGO from "../../images/logo.svg";
 import AVATAR from "../../images/avatar.jpg";
 import { useSelector } from "react-redux";
+import UserSignupForm from "../User/UserSignupForm";
+import { useState } from "react";
 
 const Header = () => {
+  const [values] = useState ({name:"Guest",avatar:AVATAR})
+
+  const [showSignupForm, setShowSignupForm] = useState(false);
   const productsCountInCart = useSelector((state) => state.user.cart.length);
+  const toggleSignupForm = () => {
+    setShowSignupForm(!showSignupForm);
+  };
+  const favorites = useSelector((state) => state.favorite.favorites);
+    const productsCountInFavorite = favorites.length;
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -19,9 +29,11 @@ const Header = () => {
         <div className={styles.user}>
           <div
             className={styles.avatar}
-            style={{ backgroundImage: `url(${AVATAR})` }}
+            style={{ backgroundImage: `url(${values.avatar})` }}
           />
-          <div className={styles.username}>Guest</div>
+          <div className={styles.username}>{values.name}</div>
+          <button
+          className={styles.signupButton} onClick={toggleSignupForm}> Sign up</button> {showSignupForm && <UserSignupForm />}
         </div>
         <form className={styles.form}>
           <div className={styles.icon}>
@@ -42,10 +54,13 @@ const Header = () => {
           {false && <div className={styles.box}></div>}
         </form>
         <div className={styles.account}>
-          <Link to={ROUTES.HOME} className={styles.favourites}>
+          <Link to={ROUTES.FAVORITE} className={styles.cart}>
             <svg className={styles["icon-fav"]}>
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#car`} />
             </svg>
+            {productsCountInFavorite ? (
+              <span className={styles.count}>{productsCountInFavorite}</span>
+            ) : null}
           </Link>
 
           <Link to={ROUTES.CART} className={styles.cart}>

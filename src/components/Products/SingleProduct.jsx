@@ -6,6 +6,7 @@ import styles from "../../styles/Product.module.css";
 import { ROUTES } from "../../utils/routes";
 import { addItemToCart } from "../../features/user/userSlice";
 import { useDispatch } from "react-redux";
+import { addToFavorites } from "../../features/user/FavoriteSlice";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const SingleProduct = () => {
                 <p className={styles.price}>Price: ${price}</p>
                 <div className={styles.actions}>
                   <Link
-                    to={`/products/${id}`}
+                     to={ROUTES.CART}
                     onClick={() =>
                       dispatch(
                         addItemToCart({
@@ -44,8 +45,18 @@ const SingleProduct = () => {
                   >
                     <button className={styles.add}>Add to test drive</button>
                   </Link>
-                  <Link to={`/products/${id}`}>
-                    <button className={styles.favorite}>
+                  <Link to={ROUTES.FAVORITE}
+                    onClick={() =>
+                      dispatch(
+                        addToFavorites({
+                          id,
+                          title,
+                          price,
+                        })
+                      )
+                    }
+                  >
+                     <button className={styles.favorite}>
                       Add to interesting
                     </button>
                   </Link>
