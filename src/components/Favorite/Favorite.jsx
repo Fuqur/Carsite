@@ -1,13 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import styles from "../../styles/Product.module.css";
+import { removeFromFavorite } from "../../features/user/FavoriteSlice";
 
 const Favorite = () => {
-  const favorites = useSelector((state) => state.userFavorite.favorites); 
+  const favorite = useSelector((state) => state.favorite.favorite);
+  const dispatch = useDispatch();
 
-  if (favorites.length === 0) {
+  if (!favorite || favorite.length === 0) {
     return (
       <div className={styles.title}>
         <p className={styles.cartret}>Your favorite list is empty.</p>
@@ -23,11 +25,18 @@ const Favorite = () => {
       <div>
         <h1>Your Favorites</h1>
         <ul className={styles.cartul}>
-          {favorites.map((item) => (
+          {favorite.map((item) => (
             <li key={item.id}>
               <div className={styles.info}>
                 <h2 className={styles.titles}>{item.title}</h2>
                 <p className={styles.price}>Price: ${item.price}</p>
+                <p className={styles.price}>Quantity: {item.quantity}</p>
+                <button
+                  className={styles.remove}
+                  onClick={() => dispatch(removeFromFavorite(item))}
+                >
+                  Remove from Favorites
+                </button>
               </div>
             </li>
           ))}

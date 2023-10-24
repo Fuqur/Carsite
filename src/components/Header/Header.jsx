@@ -16,8 +16,8 @@ const Header = () => {
   const toggleSignupForm = () => {
     setShowSignupForm(!showSignupForm);
   };
-  const favorites = useSelector((state) => state.favorite.favorites);
-    const productsCountInFavorite = favorites.length;
+  const favorite = useSelector((state) => state.favorite.favorite);
+    const productsCountInFavorite = favorite.length;
   return (
     <div className={styles.header}>
       <div className={styles.logo}>

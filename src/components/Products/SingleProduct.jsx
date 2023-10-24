@@ -6,7 +6,7 @@ import styles from "../../styles/Product.module.css";
 import { ROUTES } from "../../utils/routes";
 import { addItemToCart } from "../../features/user/userSlice";
 import { useDispatch } from "react-redux";
-import { addToFavorites } from "../../features/user/FavoriteSlice";
+import { addToFavorite } from "../../features/user/FavoriteSlice";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -48,7 +48,7 @@ const SingleProduct = () => {
                   <Link to={ROUTES.FAVORITE}
                     onClick={() =>
                       dispatch(
-                        addToFavorites({
+                        addToFavorite({
                           id,
                           title,
                           price,
@@ -56,7 +56,7 @@ const SingleProduct = () => {
                       )
                     }
                   >
-                     <button className={styles.favorite}>
+                     <button className={styles.add}>
                       Add to interesting
                     </button>
                   </Link>
@@ -74,3 +74,4 @@ const SingleProduct = () => {
 };
 
 export default SingleProduct;
+//MIGRATIONZS2023
