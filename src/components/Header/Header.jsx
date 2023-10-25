@@ -9,7 +9,7 @@ import UserSignupForm from "../User/UserSignupForm";
 import { useState } from "react";
 
 const Header = () => {
-  const [values] = useState ({name:"Guest",avatar:AVATAR})
+  const [values] = useState({ name: "Guest", avatar: AVATAR });
 
   const [showSignupForm, setShowSignupForm] = useState(false);
   const productsCountInCart = useSelector((state) => state.user.cart.length);
@@ -17,7 +17,7 @@ const Header = () => {
     setShowSignupForm(!showSignupForm);
   };
   const favorite = useSelector((state) => state.favorite.favorite);
-    const productsCountInFavorite = favorite.length;
+  const productsCountInFavorite = favorite.length;
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -32,8 +32,14 @@ const Header = () => {
             style={{ backgroundImage: `url(${values.avatar})` }}
           />
           <div className={styles.username}>{values.name}</div>
-          <button
-          className={styles.signupButton} onClick={toggleSignupForm}> Sign up</button> {showSignupForm && <UserSignupForm />}
+          <button className={styles.signupButton} onClick={toggleSignupForm}>
+            {" "}
+            Sign up
+          </button>{" "}
+          <UserSignupForm
+            closeForm={() => setShowSignupForm(false)}
+            show={showSignupForm}
+          />
         </div>
         <form className={styles.form}>
           <div className={styles.icon}>
