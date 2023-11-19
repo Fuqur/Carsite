@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./Carsite/static/css/main.f9e7fb1d.css",
-    "main.js": "./Carsite/static/js/main.235e6ec6.js",
-    "static/media/banner.png": "./Carsite/static/media/banner.d9c3b10d46da1e5cb362.png",
-    "static/media/fancycar.png": "./Carsite/static/media/fancycar.87274876c632ce95dc8a.png",
-    "static/media/avatar.jpg": "./Carsite/static/media/avatar.c0ce9c311635d4fa840a.jpg",
-    "static/media/logo.svg": "./Carsite/static/media/logo.b49cf1bf03fad05a268745a8ccc88dd0.svg",
-    "index.html": "./Carsite/index.html",
-    "main.f9e7fb1d.css.map": "./Carsite/static/css/main.f9e7fb1d.css.map",
-    "main.235e6ec6.js.map": "./Carsite/static/js/main.235e6ec6.js.map"
+    "main.css": "./static/css/main.f9e7fb1d.css",
+    "main.js": "./static/js/main.84c76cd1.js",
+    "static/media/banner.png": "./static/media/banner.d9c3b10d46da1e5cb362.png",
+    "static/media/fancycar.png": "./static/media/fancycar.87274876c632ce95dc8a.png",
+    "static/media/avatar.jpg": "./static/media/avatar.c0ce9c311635d4fa840a.jpg",
+    "static/media/logo.svg": "./static/media/logo.b49cf1bf03fad05a268745a8ccc88dd0.svg",
+    "index.html": "./index.html",
+    "main.f9e7fb1d.css.map": "./static/css/main.f9e7fb1d.css.map",
+    "main.84c76cd1.js.map": "./static/js/main.84c76cd1.js.map"
   },
   "entrypoints": [
     "static/css/main.f9e7fb1d.css",
-    "static/js/main.235e6ec6.js"
+    "static/js/main.84c76cd1.js"
   ]
 }
