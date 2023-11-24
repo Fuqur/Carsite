@@ -16,10 +16,10 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <div className={styles.title}>
-        <p className={styles.cartret}>Your cart is empty.</p>
+        <p className={styles.cartnet}>Your cart is empty.</p>
         <Link className={styles.cartret} to={ROUTES.HOME}>
           Return to the main page
-        </Link>
+      </Link>
       </div>
     );
   }
@@ -27,7 +27,7 @@ const Cart = () => {
   return (
     <section className={styles.sectioncart}>
       <div>
-        <h1>Your Cart</h1>
+        <h2>Your Cart</h2>
         <ul className={styles.cartul}>
           {cart.map((item) => (
             <li key={item.id}>

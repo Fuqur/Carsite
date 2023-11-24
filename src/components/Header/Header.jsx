@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Header.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
@@ -6,7 +6,6 @@ import LOGO from "../../images/logo.svg";
 import AVATAR from "../../images/avatar.jpg";
 import { useSelector } from "react-redux";
 import UserSignupForm from "../User/UserSignupForm";
-import { useState } from "react";
 
 const Header = () => {
   const [values] = useState({ name: "Guest", avatar: AVATAR });

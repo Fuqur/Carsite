@@ -12,10 +12,10 @@ const Favorite = () => {
   if (!favorite || favorite.length === 0) {
     return (
       <div className={styles.title}>
-        <p className={styles.cartret}>Your favorite list is empty.</p>
+        <p className={styles.cartnet}>Your favorite list is empty.</p>
         <Link className={styles.cartret} to={ROUTES.HOME}>
-          Return to the main page
-        </Link>
+      Return to the main page
+      </Link>
       </div>
     );
   }

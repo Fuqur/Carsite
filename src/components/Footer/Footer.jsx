@@ -11,6 +11,7 @@ const Footer = () => (
         <img src={LOGO} alt="Stuff"/>
        </Link>
          </div>
+         
 
          <div className={styles.rights}>
           Developed by Ivan Darganov
